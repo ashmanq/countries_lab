@@ -79,7 +79,7 @@ export default {
         const checkinList = this.favouriteCountries.filter((country) => {
           return country.name == this.selectedCountry.name;
         });
-        console.log(checkinList);
+
         if (checkinList.length ==0){
           this.favouriteCountries.unshift(this.selectedCountry)
         }

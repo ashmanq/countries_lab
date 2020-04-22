@@ -76,12 +76,11 @@ export default {
         .then(data => this.countries = data)
       },
       addToFavourites: function() {
-        const checkinList = function() {
-          return this.favouriteCountries.find((country) => {
-            return country.name === this.selectedCountry.name;
-          })
-        }
-        if (checkinList){
+        const checkinList = this.favouriteCountries.filter((country) => {
+          return country.name == this.selectedCountry.name;
+        });
+        console.log(checkinList);
+        if (checkinList.length ==0){
           this.favouriteCountries.unshift(this.selectedCountry)
         }
       },
